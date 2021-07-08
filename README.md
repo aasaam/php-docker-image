@@ -21,10 +21,10 @@ Latest stable PHP and composer with adding following extensions:
 - imagick
 - intl
 - libxml
+- opcache
 - redis
-- Xdebug
+- xdebug
 - xml
-- Zend OPcache
 - zip
 
 <div>
