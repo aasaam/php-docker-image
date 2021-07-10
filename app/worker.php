@@ -4,6 +4,6 @@
 declare(strict_types=1);
 
 while (true) {
-  printf("%s\tSample worker", date('r'));
-  sleep(1);
+    printf("%s\tSample worker\n", date('r'));
+    sleep(5);
 }

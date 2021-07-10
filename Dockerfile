@@ -51,6 +51,7 @@ RUN apk --no-cache update \
 
 ADD config/entrypoint-common.sh /entrypoint-common.sh
 ADD config/entrypoint-fpm.sh /entrypoint-fpm.sh
+ADD config/entrypoint-worker.sh /entrypoint-worker.sh
 ADD config/php/zz-config.ini /zz-config.ini
 ENTRYPOINT [ "/entrypoint-fpm.sh" ]
 CMD [ "php-fpm" ]
