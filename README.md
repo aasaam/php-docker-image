@@ -22,6 +22,8 @@ Latest stable PHP and composer with adding following extensions:
 - intl
 - libxml
 - opcache
+- pdo_mysql
+- pdo_pgsql
 - redis
 - xdebug
 - xml
