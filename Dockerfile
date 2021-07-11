@@ -19,8 +19,9 @@ RUN apk --no-cache update \
     p7zip \
     postgresql-dev \
     tidyhtml \
+    tidyhtml-dev \
     autoconf gcc make g++ \
-  && docker-php-ext-install opcache gmp dom xml simplexml zip intl pdo_pgsql pdo_mysql \
+  && docker-php-ext-install opcache gmp dom xml simplexml zip intl pdo_pgsql pdo_mysql tidy \
   # composer
   && chmod +x /usr/bin/composer \
   && /usr/bin/composer selfupdate \

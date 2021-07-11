@@ -25,6 +25,7 @@ Latest stable PHP and composer with adding following extensions:
 - pdo_mysql
 - pdo_pgsql
 - redis
+- tidy
 - xdebug
 - xml
 - zip
