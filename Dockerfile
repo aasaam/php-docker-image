@@ -20,6 +20,8 @@ RUN apk --no-cache update \
     postgresql-dev \
     tidyhtml \
     tidyhtml-dev \
+    font-noto font-noto-arabic \
+    vips-dev \
     autoconf gcc make g++ \
   && docker-php-ext-install opcache gmp dom xml simplexml zip intl pdo_pgsql pdo_mysql tidy \
   # composer
@@ -28,8 +30,12 @@ RUN apk --no-cache update \
   && rm /root/.composer -rf \
   # extensions
   && cd /tmp \
+  && echo 'no' | pecl install -o -f apcu \
+  && docker-php-ext-enable apcu \
   && pecl install -o -f igbinary \
   && docker-php-ext-enable igbinary \
+  && echo 'yes' | pecl install -o -f vips \
+  && docker-php-ext-enable vips \
   && echo 'yes' | pecl install -o -f redis \
   && docker-php-ext-enable redis \
   && pecl install -o -f xdebug \
@@ -48,7 +54,8 @@ RUN apk --no-cache update \
   && rm -rf /var/cache/apk/* && rm -rf /tmp && mkdir /tmp && chmod 777 /tmp && truncate -s 0 /var/log/*.log \
   && echo "===================" \
   && php -i \
-  && echo "==================="
+  && echo "===================" \
+  && rm /root/.ash_history -rf
 
 ADD config/entrypoint-common.sh /entrypoint-common.sh
 ADD config/entrypoint-fpm.sh /entrypoint-fpm.sh

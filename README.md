@@ -15,6 +15,7 @@
 
 Latest stable PHP and composer with adding following extensions:
 
+- apcu
 - dom
 - gmp
 - igbinary
@@ -26,6 +27,7 @@ Latest stable PHP and composer with adding following extensions:
 - pdo_pgsql
 - redis
 - tidy
+- vips
 - xdebug
 - xml
 - zip
