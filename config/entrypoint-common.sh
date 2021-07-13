@@ -15,10 +15,10 @@ fi
 
 # global
 echo "Configure php fpm"
-echo "pm.max_children = ${ASM_PHP_FPM_MAX_CHILDREN}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
-  && echo "pm.start_servers = ${ASM_PHP_FPM_START_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
-  && echo "pm.min_spare_servers = ${ASM_PHP_FPM_MIN_SPARE_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
-  && echo "pm.max_spare_servers = ${ASM_PHP_FPM_MAX_SPARE_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf
+echo "pm.max_children = ${CONFIGURE_PHP_FPM_MAX_CHILDREN}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
+  && echo "pm.start_servers = ${CONFIGURE_PHP_FPM_START_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
+  && echo "pm.min_spare_servers = ${CONFIGURE_PHP_FPM_MIN_SPARE_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf \
+  && echo "pm.max_spare_servers = ${CONFIGURE_PHP_FPM_MAX_SPARE_SERVERS}" >> /usr/local/etc/php-fpm.d/zz-docker.conf
 
 echo "Configure php.ini"
 envsubst < /zz-config.ini > /usr/local/etc/php/conf.d/zz-config.ini
