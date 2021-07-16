@@ -10,6 +10,7 @@ RUN apk --no-cache update \
     ca-certificates \
     curl \
     fribidi \
+    pango-dev \
     gettext \
     gmp-dev \
     icu-dev \
