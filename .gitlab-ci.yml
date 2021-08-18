@@ -20,7 +20,7 @@ build:
   stage: build
   script:
     # build
-    - docker build -f Dockerfile -t aasaam/php-docker-image .
+    - docker build --no-cache -f Dockerfile -t aasaam/php-docker-image .
     # push
     - |
       docker push aasaam/php-docker-image
